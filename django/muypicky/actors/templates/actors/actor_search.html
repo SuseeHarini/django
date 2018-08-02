@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block head_title %}Actors | {{ block.super}}{% endblock head_title %}
+
+{% block content %}
+<html>
+<head>
+    <title>Search</title>
+</head>
+<body>
+    <form action="../search/" method="get">
+        <input type="text" name="q">
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
+{% endblock%}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block head_title %}Employees | {{ block.super}}{% endblock head_title %}
+
+{% block content %}
+<h1>Employee Details
+<a href='/employees/create/'> Add Employee</a>
+<a href='/employees/search-form/'> Search Employee</a>
+</h1>
+<ul>
+{% for obj in object_list %}
+<p><strong> Emp.id: {{ obj.emp_id }} </strong></p>
+<p>  Name:  {{ obj.name }} </p>
+<p> DOB: {{ obj.dob }} </p>
+<p>Phone Number: {{ obj.phone }}</p>
+<p> Address: {{ obj.address }}</p>
+{% empty %}
+{% endfor %}
+</ul>
+{% endblock %}

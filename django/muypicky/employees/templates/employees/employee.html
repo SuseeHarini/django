@@ -1,0 +1,14 @@
+<form action="your-name/" method="post">
+    {% csrf_token %}
+    <p><label for="name">Your name: </label>
+      <input id="name" type="text" name="name" value="{{ current_name }}"></p>
+    <p><label for="address">Address: </label>
+      <input id="address" type="text" name="address" value="{{ current_address }}"></p>
+    <p><label for="dob">DOB: </label>
+      <input id="dob" type="date" name="dob" value="{{ current_dob }}"></p>
+    <p><label for="phone">Phone Number: </label>
+      <input id="phone" type="number" name="phone" value="{{ current_phone }}"></p>
+    <p><label for="emp_id">Employee ID: </label>
+      <input id="emp_id" type="number" name="emp_id" value="{{ current_emp_id }}"></p>
+    <p><input type="submit" value="Submit"></p>
+</form>

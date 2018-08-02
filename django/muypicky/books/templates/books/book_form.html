@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block head_title %}Books | {{ block.super}}{% endblock head_title %}
+
+{% block content %}
+<h1>Books Available
+<a href='/books/create/'> Add Books</a>
+<a href='/books/search-form/'> Search Books</a>
+</h1>
+<ul>
+{% for obj in object_list %}
+<p><strong> Book Title: {{ obj.title }} </strong></p>
+<p>  Author:  {{ obj.author }} </p>
+<p> Published: {{ obj.published }} </p>
+{% empty %}
+{% endfor %}
+</ul>
+{% endblock %}

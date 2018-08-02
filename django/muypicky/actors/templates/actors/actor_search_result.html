@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head_title %}Actors | {{ block.super}}{% endblock head_title %}
+
+{% block content %}
+<html>
+    <head>
+    <title>Actors Search</title>
+    </head>
+    <body>
+        <p>You searched for: <strong>{{ query }}</strong></p>
+
+        {% if actors %}
+            <ul>
+                {% for act in actors %}
+                <p><strong>Name:</strong> {{ act.name }}</p>
+                <p><strong>Surname:</strong> {{ act.surname }}</p>
+                <p><strong>Age: </strong>{{ act.age }}</p>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No employees matched your search criteria.</p>
+        {% endif %}
+    </body>
+</html>
+{% endblock%}

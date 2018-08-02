@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block head_title %}Employees | {{ block.super}}{% endblock head_title %}
+
+{% block content %}
+<html>
+    <head>
+    <title>Book Search</title>
+    </head>
+    <body>
+        <p>You searched for: <strong>{{ query }}</strong></p>
+
+        {% if employees %}
+            <ul>
+                {% for emp in employees %}
+                <p><strong>Employee ID:</strong> {{ emp.emp_id }}</p>
+                <p><strong>Name:</strong> {{ emp.name }}</p>
+                <p><strong>Address: </strong>{{ emp.address }}</p>
+                <p><strong>Date of Birth:</strong> {{ emp.dob }}</p>
+                <p><strong>Phone Number:</strong> {{ emp.phone }}</p>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No employees matched your search criteria.</p>
+        {% endif %}
+    </body>
+</html>
+{% endblock%}

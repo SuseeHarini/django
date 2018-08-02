@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block head_title %}Books | {{ block.super}}{% endblock head_title %}
+
+{% block content %}
+<form action="your-name/" method="post">
+    {% csrf_token %}
+    <p><label for="title">Title: </label>
+      <input id="title" type="text" name="title" value="{{ current_title }}"></p>
+    <p><label for="author">Author: </label>
+      <input id="author" type="text" name="author" value="{{ current_author }}"></p>
+    <p><label for="published">Published: </label>
+      <input id="published" type="date" name="published" value="{{ current_published }}"></p>
+    <p><input type="submit" value="Save"></p>
+</form>
+{% endblock %}

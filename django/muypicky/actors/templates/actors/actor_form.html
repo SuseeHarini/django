@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block head_title %}Actors | {{ block.super}}{% endblock head_title %}
+
+{% block content %}
+<h1>Actors Details
+<a href='/actors/create/'> Add Actors</a>
+<a href='/actors/search-form/'> Search Actors</a>
+</h1>
+<ul>
+{% for obj in object_list %}
+<p><strong> Name: {{ obj.name }} </strong></p>
+<p>  Surname:  {{ obj.surname }} </p>
+<p> Age: {{ obj.age }} </p>
+{% empty %}
+{% endfor %}
+</ul>
+{% endblock %}
